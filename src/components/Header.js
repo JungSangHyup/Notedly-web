@@ -42,7 +42,16 @@ const Header = props => {
       <LogoText>Notedly</LogoText>
       <UserState>
         {data.isLoggedIn ? (
-          <ButtonAsLink>Log Out</ButtonAsLink>
+          <ButtonAsLink
+            onClick={() => {
+              localStorage.removeItem('token');
+              client.resetStore();
+              client.writeData({ data: { isLoggedIn: false } });
+              props.history.push('/');
+            }}
+          >
+            Log Out
+          </ButtonAsLink>
         ) : (
           <p>
             <Link to={'/signin'}>Sign In</Link> or{' '}

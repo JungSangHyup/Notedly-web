@@ -48,6 +48,7 @@ const UserForm = props => {
               ...values
             }
           });
+          console.log(props.action);
         }}
       >
         {props.formType === 'signup' && (
