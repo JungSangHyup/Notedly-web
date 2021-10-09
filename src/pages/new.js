@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useMutation, gql } from '@apollo/client';
+<<<<<<< Updated upstream
 import { GET_MY_NOTES, GET_NOTES } from '../gql/query';
 
 import NoteForm from '../components/NoteForm';
@@ -22,12 +23,15 @@ const NEW_NOTE = gql`
     }
   }
 `;
+=======
+>>>>>>> Stashed changes
 
 const NewNote = props => {
   useEffect(() => {
     document.title = 'New Note - Notedly';
   });
 
+<<<<<<< Updated upstream
   const [data, { loading, error }] = useMutation(NEW_NOTE, {
     refetchQueries: [{ query: GET_MY_NOTES }, { query: GET_NOTES }],
     onCompleted: data => {
@@ -42,6 +46,9 @@ const NewNote = props => {
     {error && <p>Error saving the note</p>}
     <NoteForm action={data} />;
   </React.Fragment>;
+=======
+  return <div>New Note</div>;
+>>>>>>> Stashed changes
 };
 
 export default NewNote;
