@@ -4,6 +4,8 @@ import { GET_MY_NOTES, GET_NOTES } from '../gql/query';
 
 import NoteForm from '../components/NoteForm';
 
+import { NEW_NOTE } from '../gql/mutation';
+
 const NewNote = props => {
   useEffect(() => {
     document.title = 'New Note - Notedly';
